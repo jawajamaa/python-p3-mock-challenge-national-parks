@@ -28,8 +28,8 @@ class TestVisitor:
         assert visitor.name == "Steve"
 
         # uncomment the next two lines if using Exceptions
-        # with pytest.raises(Exception):
-        #     Visitor(2)
+        with pytest.raises(Exception):
+            Visitor(2)
 
     def test_name_has_valid_length(self):
         """can change the visitor's name if between 1 and 15 characters long"""
@@ -37,20 +37,20 @@ class TestVisitor:
         assert vis.name == "Poppy"
 
         # comment out the next two lines if using Exceptions
-        vis.name = "TooLongTobeValid"
-        assert vis.name == "Poppy"
+        # vis.name = "TooLongTobeValid"
+        # assert vis.name == "Poppy"
 
         # comment out the next two lines if using Exceptions
-        vis.name = ""
-        assert vis.name == "Poppy"
+        # vis.name = ""
+        # assert vis.name == "Poppy"
 
         # uncomment the next two lines if using Exceptions
-        # with pytest.raises(Exception):
-        #     Visitor("")
+        with pytest.raises(Exception):
+            Visitor("")
 
         # uncomment the next two lines if using Exceptions
-        # with pytest.raises(Exception):
-        #     Visitor("TooLongTobeValid")
+        with pytest.raises(Exception):
+            Visitor("TooLongTobeValid")
 
     def test_has_many_trips(self):
         """visitor has many Trips"""
