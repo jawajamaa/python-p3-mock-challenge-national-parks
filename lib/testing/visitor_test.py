@@ -20,8 +20,8 @@ class TestVisitor:
 
         # does not mutate name if value is not a string
         # comment out the next two lines if using Exceptions
-        visitor.name = 2
-        assert visitor.name == "Bob"
+        # visitor.name = 2
+        # assert visitor.name == "Bob"
 
         # does mutate name if value is a valid string
         visitor.name = "Steve"

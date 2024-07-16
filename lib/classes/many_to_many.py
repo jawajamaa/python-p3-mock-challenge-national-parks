@@ -29,13 +29,32 @@ class NationalPark:
         return len(self.trips())
     
     def best_visitor(self):
-        pass
-    # from chatGPT
-    # from collections import Counter
-    # visitors = [trip.visitor for trip in self.trips()]
-    # if visitors:
-        # return Counter(visitors).most_common(1)[0][0]
-    # return None
+        allSingleParkTrips = self.trips()
+        freq = {}
+
+        for i in allSingleParkTrips:
+            freq[i.visitor] = freq.get(i.visitor, 0) + 1
+        v = list(freq.values())
+        k = list(freq.keys())
+        return (k[v.index(max(v))])
+    # below from chatGPT; above works and passes tests but it more verbose, though perhaps easier to read?
+        # from collections import Counter
+        # visitors = [trip.visitor for trip in self.trips()]
+        # if visitors:
+        #     return Counter(visitors).most_common(1)[0][0]
+        # return None
+
+    def most_visited():
+        allTrips = Trip.all
+        freq = {}
+
+        for i in allTrips:
+            freq[i.national_park] = freq.get(i.national_park, 0) + 1
+        print("Line 54, NP freq dict:", freq)
+        v = list(freq.values())
+        k = list(freq.keys())
+        return (k[v.index(max(v))])
+
 
 class Trip:
     all = list()
